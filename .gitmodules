@@ -1,0 +1,12 @@
+[submodule "kohya_ss"]
+	path = kohya_ss
+	url = https://github.com/bmaltais/kohya_ss
+[submodule "SimpleTuner"]
+	path = SimpleTuner
+	url = https://github.com/bghira/SimpleTuner
+[submodule "ai-toolkit"]
+	path = ai-toolkit
+	url = https://github.com/ostris/ai-toolkit
+[submodule "ComfyUI"]
+	path = ComfyUI
+	url = https://github.com/comfyanonymous/ComfyUI

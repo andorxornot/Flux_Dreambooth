@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Train Dreambooth LoRA FLUX",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train_dreambooth_lora_flux_advanced.py",
+            "args": [
+                "--pretrained_model_name_or_path=black-forest-labs/FLUX.1-dev",
+                "--dataset_name=/workspace/dataset",
+                "--output_dir=./flux-lora-processes-output",
+                "--instance_prompt=a photo of p3rs0n",
+                "--token_abstraction=p3rs0n",
+                "--resolution=1024",
+                "--train_batch_size=2",
+                "--gradient_accumulation_steps=4",
+                "--gradient_checkpointing",
+                "--learning_rate=1e-4",
+                //"--text_encoder_lr=5e-6",
+                "--lr_scheduler=constant",
+                "--lr_warmup_steps=0",
+                "--max_train_steps=1000",
+                "--validation_prompt=a photo of p3rs0n on a skateboard",
+                "--validation_epochs=5",
+                "--num_validation_images=2",
+                "--checkpointing_steps=20",
+                "--checkpoints_total_limit=3",
+                "--seed=42",
+                "--mixed_precision=bf16",
+                "--caption_column=text",                
+                //"--train_text_encoder_ti",
+                "--repeats=1",
+                "--rank=32",
+                "--allow_tf32",
+                "--dataloader_num_workers=4",
+                "--use_8bit_adam",
+                //"--cache_latents",
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ]
+} 
