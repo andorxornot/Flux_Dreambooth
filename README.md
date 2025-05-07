@@ -4,9 +4,13 @@
 
 Набор скриптов для обработки изображений и файнтюна FLUX с использованием техники Dreambooth, LoRA. Берём фото, обрезаем по человеку, ресайзим до 1024. Используем один текстовый промпт на все фото. Обучаем LoRA высокого ранга (128 и выше) и batch size 1 с помощью `ai-toolkit`. Оценить результат можно с 2000 шага.
 
-## Скрипты
+## Используются скрипты
 
 - `process_images_yolo.py`: Обрабатывает JPG-изображения: удаляет неподходящие (меньше 1024x1024, без людей по YOLOv8), обрезает до квадрата вокруг самого большого человека (+20%), изменяет размер до 1024x1024 и перезаписывает.
+
+
+## Другие скрипты
+
 - `process_captions.py`: В .txt файлах в `./processed3/` заменяет "Photo of MARK" на "a photo of ohwx man".
 - `train_dreambooth_lora_flux.py`: Обучает DreamBooth LoRA для FLUX с помощью Hugging Face diffusers. Позволяет обучить модель новому понятию. Поддерживает чекпоинты, валидацию, логирование.
 - `train_dreambooth_lora_flux_advanced.py`: Расширенная версия предыдущего скрипта. Добавляет поддержку "Pivotal Tuning" / Textual Inversion для создания новых токен-эмбеддингов (CLIP, T5) и более детальной карточки модели.
@@ -15,8 +19,6 @@
 - `download_test_dataset_for_diffusers.py`: Загружает тестовый датасет "LinoyTsaban/3d_icon" из Hugging Face Hub в `./3d_icon`.
 - `train_dreambooth_diffusers.sh`: Shell-скрипт для запуска обучения DreamBooth LoRA (`train_dreambooth_lora_flux.py` или `_advanced.py`) через `accelerate launch` с предопределенными параметрами.
 - `archive.sh`: Создает ZIP-архив `vastai_test.zip` с каталогами `./dataset`, `./processed` и некоторыми скриптами.
-
-(Добавьте сюда другие важные скрипты или файлы)
 
 ## Подмодули
 
@@ -43,23 +45,3 @@ source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
 pip install -r requirements.txt
 ```
 
-## Использование
-
-(Как запускать скрипты или использовать проект. Примеры команд.)
-
-Пример:
-```bash
-python train_dreambooth_lora_flux.py --ваши --аргументы
-```
-
-## Конфигурация
-
-(Описание конфигурационных файлов или переменных окружения.)
-
-## Участие в проекте
-
-(Необязательно: руководство по участию.)
-
-## Лицензия
-
-(Укажите лицензию, например, MIT, Apache 2.0.) 
