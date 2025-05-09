@@ -3,6 +3,7 @@ ai-toolkit_
 .venv
 .venv-backups
 dataset/_latent_cache/
+dataset_previous/_latent_cache/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
